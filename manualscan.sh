@@ -36,3 +36,5 @@ fi
 #Stopping the clamAV services
 sudo systemctl stop clamav-daemon
 sudo systemctl stop clamav-freshclam
+sudo systemctl disable clamav-daemon.service
+sudo systemctl disable clamav-freshclam.service
