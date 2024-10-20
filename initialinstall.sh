@@ -16,13 +16,13 @@ echo "ClamAV installed"
 
 #Updating ClamAV
 echo "Stopping ClamAV services"
-sudo systemctl stop clamav-freshclam.service
-sudo systemctl stop clamav-daemon.service
+sudo systemctl stop clamav-freshclam
+sudo systemctl stop clamav-daemon
 echo "Services Stopped"
 echo "Updating ClamAV signatures"
 sudo freshclam
-sudo systemctl start clamav-freshclam.service
-sudo systemctl start clamav-daemon.service
+sudo systemctl start clamav-freshclam
+sudo systemctl start clamav-daemon
 echo "ClamAV updated and Services Restarted!"
 
 #Installing rkHunter

@@ -1,6 +1,10 @@
 #!/bin/bash
 # Written entirely by Stefan Botnari with proper documentation
 
+#Starting the clamAV services
+sudo systemctl start clamav-daemon
+sudo systemctl start clamav-freshclam
+
 # Getting the current directory in which to scan and the datetime required to create the log
 CurrentDirectory=`pwd`
 DateTime=`date +%d%m%y`
@@ -28,3 +32,7 @@ else
     clamscan $CurrentDirectory
   fi
 fi
+
+#Stopping the clamAV services
+sudo systemctl stop clamav-daemon
+sudo systemctl stop clamav-freshclam
